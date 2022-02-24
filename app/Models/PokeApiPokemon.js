@@ -31,7 +31,7 @@ export class PokeApiPokemon {
         
         if(this.user) {
            out =  `
-         <button class="btn btn-success" onclick="app.myPokemonsController.catchPokemon()"> Remove Pokemon </button>
+         <button class="btn btn-success" onclick="app.myPokemonsController.removePokemon()"> Remove Pokemon </button>
             `
         } else {
           out =  `

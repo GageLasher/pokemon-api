@@ -19,6 +19,12 @@ class MyPokemonsService{
         let selectedPokemon = ProxyState.myPokemon.find(p => p.id == id)
         ProxyState.activePokemon = selectedPokemon
     }
+    async removePokemon(){
+        let id = ProxyState.activePokemon.id
+        const res = await sandboxApi.delete(id)
+        ProxyState.activePokemon = {}
+        ProxyState.myPokemon = ProxyState.myPokemon.filter(p => p.id != id)
+    }
 }
 
 export const myPokemonsService = new MyPokemonsService()

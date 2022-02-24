@@ -28,4 +28,11 @@ export class MyPokemonsController{
         myPokemonsService.selectPokemon(id)
         console.log(id);
     }
+    async removePokemon(){
+        try {
+              await  myPokemonsService.removePokemon()
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
